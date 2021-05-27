@@ -1,0 +1,27 @@
+﻿@{
+    ProductModel product = (ProductModel)@ViewData["Product"];
+}
+
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">price</th>
+            <th scope="col">image</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th scope="row">@product.Id</th>
+
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>
+                <img src="@product.Image" width="200px" height="200px" />
+            </td>
+
+        </tr>
+    </tbody>
+</table>

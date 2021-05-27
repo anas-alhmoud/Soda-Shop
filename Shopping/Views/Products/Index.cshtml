@@ -1,0 +1,41 @@
+﻿@{ 
+    List<ProductModel> products = (List<ProductModel>) ViewData["Products"];
+    string color = (string) ViewData["color"];
+
+}
+
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">price</th>
+            <th scope="col">image</th>
+            <th scope="col">page</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (ProductModel product in products)
+        {
+            <tr style="background-color: @color">
+                <th scope="row">@product.Id</th>
+
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>
+                    <img src="@product.Image" width="200px" height="200px" />
+                </td>
+                <td>
+                    <a href="/products/details/@product.Id">
+                        <button type="button" class="btn btn-primary">Go to page</button>
+                    </a>
+
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+
+</table>
